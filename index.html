@@ -28,7 +28,7 @@
     <section class="hero">
         <div class="gold-label">Puerto Plata, Dominican Republic</div>
         <h1>THE VIP <br> PORTAL</h1>
-        <p>Unlock unrestricted access to the Amber Coast's most exclusive villas. Your Chairman's Circle credentials await.</p>
+        <p>Unlock unrestricted access to the Amber Coast's most exclusive villas. Your ultimate VIP credentials await.</p>
         <a href="#estates" class="btn" style="text-decoration: none; display: inline-block;">Enter The Collection</a>
     </section>
 
@@ -36,17 +36,17 @@
         <div class="section-title">
             <h2>The Bracelet Experience</h2>
             <div class="divider"></div>
-            <p>Your Chairman's Circle credentials unlock an entirely different Dominican Republic. Unrestricted, unbothered, and unforgettable.</p>
+            <p>Your Gold VIP credentials unlock an entirely different Dominican Republic. Unrestricted, unbothered, and unforgettable.</p>
         </div>
         
         <div class="perks-grid">
             <div class="perk-card">
                 <h3>VIP Beach Access</h3>
-                <p>Bypass the crowds. Enjoy exclusive entry to private-access beach clubs featuring attentive, members-only cabana service and top-shelf bars.</p>
+                <p>Bypass the crowds. Enjoy exclusive entry to private-access beach clubs featuring attentive beach butlers, swinging beds, and premium bars.</p>
             </div>
             <div class="perk-card">
-                <h3>Private Villa Chef</h3>
-                <p>Wake up to a gourmet breakfast prepared in your private villa, alongside a fully stocked refrigerator curated by your dedicated concierge.</p>
+                <h3>Private Villa Chef & BBQ</h3>
+                <p>Wake up to a gourmet breakfast prepared daily in your private villa. During your stay, enjoy an exclusive backyard BBQ featuring premium steak and lobster.</p>
             </div>
             <div class="perk-card">
                 <h3>Elite Transfers</h3>
@@ -59,23 +59,135 @@
         <div class="section-title">
             <h2>The Collection</h2>
             <div class="divider"></div>
-            <p>From modern oceanfront suites to sprawling private villas.</p>
+            <p>Select a category to explore our portfolio of private estates and resort suites.</p>
         </div>
-        
-        <div class="estates-grid">
-            <div class="estate-card">
-                <div class="estate-image" style="background-image: url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="estate-info">
-                    <h3>The Crown Villas</h3>
-                    <p>The ultimate personal oasis. Featuring private pools, sweeping terraces, and dedicated concierge service to handle dinner reservations and excursions.</p>
+
+        <div class="collection-toggle">
+            <button class="toggle-btn active" id="btn-villas">Private Villas</button>
+            <button class="toggle-btn" id="btn-suites">Suites & Resorts</button>
+        </div>
+
+        <div id="villas-catalogue" class="catalogue-container active">
+            <div class="catalogue-list">
+                <button class="catalogue-item active" data-image="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80" data-title="The Cliff Villas" data-beds="6 to 7 Bedrooms" data-desc="The pinnacle of luxury set on a dramatic peninsula. Features modern design, floating staircases, and infinity pools merging with the Caribbean Sea.">The Cliff Villas</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" data-title="The Crown Villas" data-beds="3 to 7 Bedrooms" data-desc="Classic Mediterranean-style estates nestled in lush tropical vegetation. Every comfort carefully crafted with sprawling private pools and shaded verandas.">The Crown Villas</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" data-title="The Royal Villas" data-beds="3 to 7 Bedrooms" data-desc="A perfect fusion of Spanish Mediterranean architecture and contemporary chic. Rich designer furnishings, cascading pool elements, and ultimate privacy.">The Royal Villas</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80" data-title="Villa Park" data-beds="4 to 6 Bedrooms" data-desc="Surrounded by majestic mountains and exotic flora. Features beautiful tiled floors, private Jacuzzis, and an exclusive, highly tailored estate experience.">Villa Park</button>
+            </div>
+            
+            <div class="catalogue-display">
+                <div class="display-image" id="villas-image" style="background-image: url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80');"></div>
+                <div class="display-info">
+                    <h3 id="villas-title">The Cliff Villas</h3>
+                    <p class="bed-count" id="villas-beds">6 to 7 Bedrooms</p>
+                    <p id="villas-desc">The pinnacle of luxury set on a dramatic peninsula. Features modern design, floating staircases, and infinity pools merging with the Caribbean Sea.</p>
+                    <ul class="amenity-list">
+                        <li>Private Swimming Pool</li>
+                        <li>Personal In-Villa Chef</li>
+                        <li>Dedicated Concierge</li>
+                    </ul>
                 </div>
             </div>
-            <div class="estate-card">
-                <div class="estate-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="estate-info">
-                    <h3>Presidential Suites</h3>
-                    <p>Unmatched luxury with expansive living areas, breathtaking views, and modern sophistication right in the heart of the resort.</p>
+        </div>
+
+        <div id="suites-catalogue" class="catalogue-container">
+            <div class="catalogue-list">
+                <button class="catalogue-item active" data-image="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" data-title="Presidential Suites" data-beds="Luxury Suites" data-desc="Incredible luxury accommodations setting a new standard for hotel-style getaways with expansive living areas and unmatched comfort.">Presidential Suites</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80" data-title="Sunrise Suites" data-beds="Luxury Suites" data-desc="Ideally located in a deluxe four-story building, offering breathtaking morning views and serene, modern elegance.">Sunrise Suites</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" data-title="The Royal Suites" data-beds="Luxury Suites" data-desc="A first-class, five-star vacation experience with lush surroundings and impeccably designed tropical interiors.">The Royal Suites</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" data-title="Crown & Residence Suites" data-beds="Luxury Suites" data-desc="Luxurious suites located at the base of a picturesque mountain slope, offering a secluded and serene hideaway.">Crown & Residence Suites</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80" data-title="Cofresi Palm Beach Resort" data-beds="Resort Experience" data-desc="Nestled along the Cofresi beach, blending luxury spa treatments with vibrant, energetic resort life.">Cofresi Palm Beach</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=80" data-title="Tropical Resort" data-beds="Resort Experience" data-desc="Stretching along one and a half miles of golden sands, delivering the quintessential beachfront Caribbean experience.">Tropical Resort</button>
+            </div>
+            
+            <div class="catalogue-display">
+                <div class="display-image" id="suites-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80');"></div>
+                <div class="display-info">
+                    <h3 id="suites-title">Presidential Suites</h3>
+                    <p class="bed-count" id="suites-beds">Luxury Suites</p>
+                    <p id="suites-desc">Incredible luxury accommodations setting a new standard for hotel-style getaways with expansive living areas and unmatched comfort.</p>
+                    <ul class="amenity-list">
+                        <li>VIP Beach Access</li>
+                        <li>Premium Dining Options</li>
+                        <li>Resort Entertainment</li>
+                    </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="directory" class="directory-section">
+        <div class="section-title">
+            <h2>The Elite Directory</h2>
+            <div class="divider"></div>
+            <p>A curated selection of the global cuisines, private beaches, and VIP lounges available exclusively to our guests.</p>
+        </div>
+
+        <div class="directory-grid">
+            <div class="directory-category">
+                <h3 class="category-title">Global Cuisines</h3>
+                <ul class="directory-list">
+                    <li>
+                        <h4>Rodizio Wine Cellar</h4>
+                        <p>Authentic Brazilian Churrascaria • Cofresi Palm</p>
+                    </li>
+                    <li>
+                        <h4>Simply Gourmet</h4>
+                        <p>Premium Steak & Seafood • VIP World</p>
+                    </li>
+                    <li>
+                        <h4>Jazz</h4>
+                        <p>Upscale French Bistro • Presidential Suites</p>
+                    </li>
+                    <li>
+                        <h4>Tapas Lounge</h4>
+                        <p>Spanish Hors d'oeuvres • VIP A la carte</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="directory-category">
+                <h3 class="category-title">Exclusive Beach Clubs</h3>
+                <ul class="directory-list">
+                    <li>
+                        <h4>V.I.P. Beach</h4>
+                        <p>Sushi Bar & Mixology • Beach Butlers</p>
+                    </li>
+                    <li>
+                        <h4>Harmony Beach</h4>
+                        <p>Gourmet Crepes & Ice Cream • Swinging Beds</p>
+                    </li>
+                    <li>
+                        <h4>Deja View Beach</h4>
+                        <p>The Diamond Grill • Seaside Jacuzzis</p>
+                    </li>
+                    <li>
+                        <h4>Lifestyle Beach</h4>
+                        <p>Half Shell Seafood Bar • Ceviche & Fast Fare</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="directory-category">
+                <h3 class="category-title">Lounges & Bars</h3>
+                <ul class="directory-list">
+                    <li>
+                        <h4>Cosmopolitans</h4>
+                        <p>Premium Cocktails • VIP Pool</p>
+                    </li>
+                    <li>
+                        <h4>Bubbles</h4>
+                        <p>Sparkling Lounge • V.I.P. Beach</p>
+                    </li>
+                    <li>
+                        <h4>Mixology</h4>
+                        <p>Craft Cocktails • V.I.P. Beach</p>
+                    </li>
+                    <li>
+                        <h4>The Spot</h4>
+                        <p>Elevated Views • Balcony Level of VIP Pool</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -141,10 +253,6 @@
             <div class="input-group" id="bedroomField" style="display: none;">
                 <select id="bedrooms" name="bedrooms">
                     <option value="" disabled selected>Number of Bedrooms Required</option>
-                    <option value="4">4 Bedrooms (Max 8 Guests)</option>
-                    <option value="5">5 Bedrooms (Max 10 Guests)</option>
-                    <option value="6">6 Bedrooms (Max 12 Guests)</option>
-                    <option value="7">7 Bedrooms (Max 14 Guests)</option>
                 </select>
             </div>
             

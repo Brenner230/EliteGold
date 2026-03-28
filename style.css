@@ -14,7 +14,7 @@ body {
     background-color: var(--bg-black); 
     color: var(--text-platinum); 
     line-height: 1.6;
-    color-scheme: dark; /* Ensures browser elements like date pickers are dark */
+    color-scheme: dark;
 }
 
 /* === NAVBAR === */
@@ -66,26 +66,49 @@ h1 { font-size: 4rem; margin: 0; font-weight: 200; letter-spacing: 2px; color: #
 }
 .btn:hover { background: var(--gold-champagne); color: var(--bg-black); }
 
-/* === SECTIONS === */
-.perks-section, .estates-section { padding: 100px 5%; border-bottom: 1px solid var(--border-graphite); }
-.perks-section { background-color: #0A0A0A; }
+/* === PERKS SECTION === */
+.perks-section { padding: 100px 5%; background-color: #0A0A0A; border-bottom: 1px solid var(--border-graphite); }
 .section-title { text-align: center; margin-bottom: 50px; }
 .section-title h2 { font-size: 2.5rem; font-weight: 200; letter-spacing: 4px; color: var(--gold-champagne); text-transform: uppercase; }
 .divider { width: 50px; height: 1px; background-color: var(--gold-champagne); margin: 20px auto; }
 .section-title p { max-width: 500px; margin: 0 auto; color: var(--text-platinum); }
 
-.perks-grid, .estates-grid { display: grid; gap: 40px; max-width: 1200px; margin: 40px auto 0; }
-.perks-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.perks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 40px auto 0; }
 .perk-card { padding: 40px; border: 1px solid var(--border-graphite); background-color: var(--bg-black); text-align: center; transition: 0.4s ease; }
 .perk-card:hover { border-color: var(--gold-champagne); transform: translateY(-10px); }
 .perk-card h3 { color: var(--gold-champagne); font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; font-size: 1.3rem; text-transform: uppercase; }
 
-.estates-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
-.estate-card { border: 1px solid var(--border-graphite); background-color: var(--bg-black); overflow: hidden; }
-.estate-image { height: 300px; background-size: cover; background-position: center; transition: 0.6s ease; }
-.estate-card:hover .estate-image { transform: scale(1.05); }
-.estate-info { padding: 30px; text-align: center; }
-.estate-info h3 { color: var(--gold-champagne); font-weight: 300; letter-spacing: 2px; margin-bottom: 15px; font-size: 1.5rem; text-transform: uppercase; }
+/* === THE INTERACTIVE CATALOGUE === */
+.estates-section { padding: 100px 5%; background-color: var(--bg-black); border-bottom: 1px solid var(--border-graphite); }
+
+.collection-toggle { display: flex; justify-content: center; gap: 20px; margin-bottom: 50px; }
+.toggle-btn { background: transparent; border: none; color: #555; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; transition: 0.3s ease; padding-bottom: 5px; border-bottom: 2px solid transparent; }
+.toggle-btn.active { color: var(--gold-champagne); border-bottom: 2px solid var(--gold-champagne); }
+
+.catalogue-container { display: none; gap: 50px; max-width: 1200px; margin: 0 auto; align-items: stretch; }
+.catalogue-container.active { display: flex; }
+
+.catalogue-list { flex: 1; display: flex; flex-direction: column; gap: 15px; border-right: 1px solid var(--border-graphite); padding-right: 20px; }
+.catalogue-item { background: transparent; border: none; text-align: left; color: #555; font-size: 1.5rem; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; padding: 15px 0; transition: 0.3s ease; font-family: inherit; }
+.catalogue-item:hover { color: var(--text-platinum); }
+.catalogue-item.active { color: var(--gold-champagne); transform: translateX(10px); }
+
+.catalogue-display { flex: 2; display: flex; flex-direction: column; }
+.display-image { width: 100%; height: 400px; background-size: cover; background-position: center; border: 1px solid var(--border-graphite); transition: background-image 0.4s ease-in-out; }
+.display-info { padding: 30px 0; }
+.display-info h3 { color: var(--gold-champagne); font-weight: 300; letter-spacing: 2px; font-size: 2rem; text-transform: uppercase; margin-bottom: 5px; }
+.bed-count { color: #888; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 20px; }
+.display-info p { color: var(--text-platinum); margin-bottom: 20px; font-size: 1.1rem; }
+
+.amenity-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 20px; }
+.amenity-list li { color: var(--text-platinum); font-weight: 300; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; }
+.amenity-list li::before { content: "•"; color: var(--gold-champagne); font-size: 1.5rem; margin-right: 8px; line-height: 1; }
+
+@media (max-width: 900px) {
+    .catalogue-container.active { flex-direction: column; }
+    .catalogue-list { border-right: none; border-bottom: 1px solid var(--border-graphite); padding-right: 0; padding-bottom: 20px; }
+    .catalogue-item.active { transform: translateX(0); padding-left: 10px; border-left: 2px solid var(--gold-champagne); }
+}
 
 /* === FORM === */
 .inquiry-section { padding: 100px 5%; background-color: var(--bg-black); display: flex; flex-direction: column; align-items: center; min-height: 600px; }
@@ -108,11 +131,59 @@ h1 { font-size: 4rem; margin: 0; font-weight: 200; letter-spacing: 2px; color: #
 
 .vip-form textarea { resize: vertical; min-height: 80px; }
 
-/* Success Message Text */
 #success-message p { max-width: 500px; color: var(--text-platinum); font-weight: 300; }
 
-/* Invert date icon for visibility */
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
+}
+
+/* === THE ELITE DIRECTORY === */
+.directory-section {
+    padding: 100px 5%;
+    background-color: #0A0A0A; /* Slight contrast from the pure black sections */
+    border-bottom: 1px solid var(--border-graphite);
+}
+
+.directory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.category-title {
+    color: var(--gold-champagne);
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-graphite);
+    padding-bottom: 10px;
+}
+
+.directory-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.directory-list h4 {
+    color: var(--text-platinum);
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.directory-list p {
+    color: #888;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
