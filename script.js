@@ -2,9 +2,19 @@
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 
+// Ensures clicking a link inside the menu also closes the menu
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
+});
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    });
 });
 
 // === INTERACTIVE CATALOGUE LOGIC ===
@@ -66,7 +76,6 @@ const submitBtn = document.getElementById('submit-btn');
 const successMsg = document.getElementById('success-message');
 const formInstruction = document.getElementById('form-instruction');
 
-// Define exactly what is available at each property
 const villaInventories = {
     "The Cliff Villas": [6, 7],
     "The Crown Villas": [3, 4, 5, 6, 7],
@@ -74,7 +83,6 @@ const villaInventories = {
     "Villa Park": [4, 5, 6]
 };
 
-// 1. Set minimum date to 7 days from today
 const today = new Date();
 const minDate = new Date(today);
 minDate.setDate(today.getDate() + 7);
@@ -85,20 +93,17 @@ checkInInput.addEventListener('change', () => {
     checkOutInput.min = checkInInput.value;
 });
 
-// 2. Dynamic Bedroom Dropdown based on Villa Selection
 accommodationSelect.addEventListener('change', (e) => {
     const selectedOption = e.target.options[e.target.selectedIndex];
     const groupLabel = selectedOption.parentNode.label;
     const villaName = selectedOption.value;
     
-    // Clear out existing options
     bedroomSelect.innerHTML = '<option value="" disabled selected>Number of Bedrooms Required</option>';
 
     if (groupLabel === "Villas" && villaInventories[villaName]) {
         bedroomField.style.display = 'block';
         bedroomSelect.required = true;
         
-        // Loop through the specific villa's inventory and build the dropdown options
         villaInventories[villaName].forEach(bedCount => {
             const maxGuests = bedCount * 2;
             const newOption = document.createElement('option');
@@ -112,11 +117,9 @@ accommodationSelect.addEventListener('change', (e) => {
     }
 });
 
-// 3. AJAX Submission with Formspree
 inquiryForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Final Capacity Validation check
     if (bedroomField.style.display === 'block') {
         const beds = parseInt(bedroomSelect.value);
         const guests = parseInt(travelersInput.value);
@@ -154,3 +157,16 @@ inquiryForm.addEventListener('submit', async (e) => {
         submitBtn.disabled = false;
     }
 });
+
+// === REVIEW CAROUSEL LOGIC ===
+const slides = document.querySelectorAll('.review-slide');
+let currentSlide = 0;
+
+if (slides.length > 0) {
+    // Automatically switch slides every 6 seconds
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 6000);
+}
