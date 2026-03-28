@@ -1,8 +1,6 @@
 // === NAVIGATION LOGIC ===
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
-
-// Ensures clicking a link inside the menu also closes the menu
 const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
 hamburger.addEventListener('click', () => {
@@ -62,7 +60,6 @@ function setupCatalogue(containerId, imageId, titleId, bedsId, descId) {
 
 setupCatalogue('villas-catalogue', 'villas-image', 'villas-title', 'villas-beds', 'villas-desc');
 setupCatalogue('suites-catalogue', 'suites-image', 'suites-title', 'suites-beds', 'suites-desc');
-
 
 // === FORM VALIDATION AND DYNAMIC BEDROOMS ===
 const inquiryForm = document.getElementById('inquiryForm');
@@ -163,10 +160,143 @@ const slides = document.querySelectorAll('.review-slide');
 let currentSlide = 0;
 
 if (slides.length > 0) {
-    // Automatically switch slides every 6 seconds
     setInterval(() => {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
     }, 6000);
 }
+
+// === LEGAL MODAL LOGIC ===
+const modal = document.getElementById("legalModal");
+const modalBody = document.getElementById("modal-content");
+const closeBtn = document.querySelector(".close-modal");
+
+const legalContent = {
+    terms: `<h2>Terms of Service</h2><p>Last Updated: March 27, 2026</p>
+            <h2>1. Brokerage Role</h2><p>Elite Gold Escapes operates exclusively as a private broker and facilitator for guest stays at Lifestyle Holidays Vacation Club. We do not own the physical resort assets.</p>
+            <h2>2. Inventory Flexibility</h2><p>The Agency guarantees confirmed bedroom counts, but reserves the right to fulfill these via a combination of units (e.g., a 7-bedroom request may be split into 3 and 4 bedroom villas) based on resort occupancy.</p>
+            <h2>3. Force Majeure</h2><p>No refunds are provided for weather-related travel incidents, natural disasters, or flight cancellations. Travel insurance is mandatory for financial protection.</p>
+            <h2>4. Liability</h2><p>Robert Brenner Jones and Elite Gold Escapes are not liable for direct or indirect damages, personal injury, or property loss occurring at the resort level.</p>`,
+    
+    privacy: `<h2>Privacy Policy</h2><p>We collect names and contact info solely to facilitate travel itineraries. Data is processed through Formspree and Vercel. We never sell or trade your data to third-party marketing entities.</p>`
+};
+
+document.getElementById("open-terms").onclick = () => {
+    modalBody.innerHTML = legalContent.terms;
+    modal.style.display = "block";
+};
+
+document.getElementById("open-privacy").onclick = () => {
+    modalBody.innerHTML = legalContent.privacy;
+    modal.style.display = "block";
+};
+
+closeBtn.onclick = () => modal.style.display = "none";
+window.addEventListener('click', (e) => { 
+    if (e.target == modal) modal.style.display = "none"; 
+});
+
+// === IMMERSIVE GALLERY LOGIC (AUTO-PLAY, ARRAYS, COUNTER) ===
+const lightbox = document.getElementById("galleryModal");
+const activeImg = document.getElementById("active-image");
+const counterEl = document.getElementById("lightbox-counter");
+
+function generateImageArray(basePath, prefix, count) {
+    let images = [];
+    for (let i = 1; i <= count; i++) {
+        images.push(`${basePath}/${prefix}${i}.jpg`);
+    }
+    return images;
+}
+
+const propertyGalleries = {
+    "The Cliff Villas": generateImageArray("images/villas/cliff-villas", "cliff-", 27), // Set to exactly 27 photos
+    "The Crown Villas": generateImageArray("images/villas/crown-villas", "crown-", 25),
+    "The Royal Villas": generateImageArray("images/villas/royal-villas", "Royal-", 17),
+    "Villa Park": generateImageArray("images/villas/villa-park", "park-", 21),
+    
+    "Presidential Suites": ["https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200"],
+    "Sunrise Suites": ["https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200"],
+    "The Royal Suites": ["https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200"],
+    "Crown & Residence Suites": ["https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1200"],
+    "Cofresi Palm Beach Resort": ["https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200"],
+    "Tropical Resort": ["https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1200"]
+};
+
+let currentPhotos = [];
+let photoIndex = 0;
+let slideshowTimer;
+
+function updateCounter() {
+    if (counterEl) {
+        counterEl.textContent = `${photoIndex + 1} / ${currentPhotos.length}`;
+    }
+}
+
+function startSlideshow() {
+    clearInterval(slideshowTimer); 
+    slideshowTimer = setInterval(() => {
+        if (currentPhotos.length > 1) {
+            photoIndex = (photoIndex + 1) % currentPhotos.length;
+            activeImg.src = currentPhotos[photoIndex];
+            updateCounter();
+        }
+    }, 3500); 
+}
+
+function stopSlideshow() {
+    clearInterval(slideshowTimer);
+}
+
+document.querySelectorAll('.gallery-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const titleElement = trigger.parentElement.querySelector('.display-info h3');
+        if (!titleElement) return;
+        
+        const activeTitle = titleElement.textContent.trim();
+        currentPhotos = propertyGalleries[activeTitle] || [];
+        
+        if (currentPhotos.length > 0) {
+            photoIndex = 0;
+            activeImg.src = currentPhotos[photoIndex];
+            updateCounter();
+            lightbox.style.display = "flex"; // Properly triggers the flex layout only when clicked
+            startSlideshow(); 
+        } else {
+            alert("Gallery imagery is currently being curated for " + activeTitle + ". Check back soon!");
+        }
+    });
+});
+
+document.getElementById("next-photo").onclick = () => {
+    stopSlideshow(); 
+    if (currentPhotos.length > 1) {
+        photoIndex = (photoIndex + 1) % currentPhotos.length;
+        activeImg.src = currentPhotos[photoIndex];
+        updateCounter();
+    }
+};
+
+document.getElementById("prev-photo").onclick = () => {
+    stopSlideshow(); 
+    if (currentPhotos.length > 1) {
+        photoIndex = (photoIndex - 1 + currentPhotos.length) % currentPhotos.length;
+        activeImg.src = currentPhotos[photoIndex];
+        updateCounter();
+    }
+};
+
+document.querySelector(".close-lightbox").onclick = () => {
+    lightbox.style.display = "none";
+    stopSlideshow(); 
+};
+
+window.addEventListener('click', (e) => {
+    if (e.target == lightbox) {
+        lightbox.style.display = "none";
+        stopSlideshow(); 
+    }
+});
