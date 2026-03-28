@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 80" width="100%" height="100%">
+  <defs>
+    <style>
+      /* Ultra-thin, widely spaced modern typography */
+      .wordmark { 
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+        font-size: 34px; 
+        font-weight: 200; 
+        letter-spacing: 12px; 
+        fill: #E5E4E2; /* Platinum Gray */
+      }
+      .gold-text { 
+        fill: #F1E5AC; /* Champagne Gold */
+      }
+    </style>
+  </defs>
+  
+  <text x="10" y="55" class="wordmark">ELITE <tspan class="gold-text">GOLD</tspan> ESCAPES</text>
+</svg>

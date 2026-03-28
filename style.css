@@ -1,0 +1,118 @@
+/* === BRAND VARIABLES === */
+:root { 
+    --bg-black: #000000; 
+    --gold-champagne: #F1E5AC; 
+    --text-platinum: #E5E4E2;
+    --border-graphite: #2C2C2C;
+}
+
+/* === GLOBAL SETTINGS === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    background-color: var(--bg-black); 
+    color: var(--text-platinum); 
+    line-height: 1.6;
+    color-scheme: dark; /* Ensures browser elements like date pickers are dark */
+}
+
+/* === NAVBAR === */
+.navbar {
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-graphite);
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 200; }
+.hamburger .bar { width: 25px; height: 2px; background-color: var(--gold-champagne); transition: 0.3s ease; }
+
+.mobile-menu {
+    position: fixed; top: -100%; left: 0; width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex; flex-direction: column; align-items: center;
+    padding: 100px 0 30px 0; transition: 0.4s ease;
+    border-bottom: 1px solid var(--border-graphite); z-index: 90;
+}
+.mobile-menu.active { top: 0; }
+.mobile-menu a {
+    color: var(--text-platinum); text-decoration: none; font-size: 1.2rem;
+    margin: 15px 0; text-transform: uppercase; letter-spacing: 3px; transition: 0.3s ease;
+}
+.mobile-menu a:hover { color: var(--gold-champagne); }
+
+/* === HERO SECTION === */
+.hero {
+    height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center; padding-top: 80px; 
+}
+.gold-label { color: var(--gold-champagne); text-transform: uppercase; letter-spacing: 5px; font-size: 0.8rem; margin-bottom: 20px; }
+h1 { font-size: 4rem; margin: 0; font-weight: 200; letter-spacing: 2px; color: #ffffff; }
+.hero p { max-width: 500px; color: var(--text-platinum); font-weight: 300; margin-top: 20px; }
+
+.btn {
+    margin-top: 40px; padding: 15px 45px; border: 1px solid var(--gold-champagne);
+    background: transparent; color: var(--gold-champagne); text-transform: uppercase;
+    letter-spacing: 3px; font-size: 0.8rem; cursor: pointer; transition: 0.4s ease;
+}
+.btn:hover { background: var(--gold-champagne); color: var(--bg-black); }
+
+/* === SECTIONS === */
+.perks-section, .estates-section { padding: 100px 5%; border-bottom: 1px solid var(--border-graphite); }
+.perks-section { background-color: #0A0A0A; }
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 2.5rem; font-weight: 200; letter-spacing: 4px; color: var(--gold-champagne); text-transform: uppercase; }
+.divider { width: 50px; height: 1px; background-color: var(--gold-champagne); margin: 20px auto; }
+.section-title p { max-width: 500px; margin: 0 auto; color: var(--text-platinum); }
+
+.perks-grid, .estates-grid { display: grid; gap: 40px; max-width: 1200px; margin: 40px auto 0; }
+.perks-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.perk-card { padding: 40px; border: 1px solid var(--border-graphite); background-color: var(--bg-black); text-align: center; transition: 0.4s ease; }
+.perk-card:hover { border-color: var(--gold-champagne); transform: translateY(-10px); }
+.perk-card h3 { color: var(--gold-champagne); font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; font-size: 1.3rem; text-transform: uppercase; }
+
+.estates-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+.estate-card { border: 1px solid var(--border-graphite); background-color: var(--bg-black); overflow: hidden; }
+.estate-image { height: 300px; background-size: cover; background-position: center; transition: 0.6s ease; }
+.estate-card:hover .estate-image { transform: scale(1.05); }
+.estate-info { padding: 30px; text-align: center; }
+.estate-info h3 { color: var(--gold-champagne); font-weight: 300; letter-spacing: 2px; margin-bottom: 15px; font-size: 1.5rem; text-transform: uppercase; }
+
+/* === FORM === */
+.inquiry-section { padding: 100px 5%; background-color: var(--bg-black); display: flex; flex-direction: column; align-items: center; min-height: 600px; }
+.vip-form { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 30px; margin-top: 40px; }
+
+.vip-form input, .vip-form select, .vip-form textarea { 
+    width: 100%; padding: 15px 0; background: transparent; border: none; 
+    border-bottom: 1px solid var(--border-graphite); color: var(--text-platinum); 
+    font-family: inherit; font-size: 1rem; transition: 0.3s ease; 
+}
+
+.vip-form input:focus, .vip-form select:focus, .vip-form textarea:focus { 
+    outline: none; border-bottom: 1px solid var(--gold-champagne); 
+}
+
+.vip-form input::placeholder, .vip-form textarea::placeholder { color: #555; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+
+.vip-form select option { background-color: var(--bg-black); color: var(--text-platinum); }
+.vip-form select optgroup { color: var(--gold-champagne); text-transform: uppercase; font-size: 0.8rem; background-color: #111; }
+
+.vip-form textarea { resize: vertical; min-height: 80px; }
+
+/* Success Message Text */
+#success-message p { max-width: 500px; color: var(--text-platinum); font-weight: 300; }
+
+/* Invert date icon for visibility */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}

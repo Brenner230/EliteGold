@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Gold Escapes | Private Access</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="images/logo.svg" alt="Elite Gold Escapes Logo" style="height: 40px;">
+        
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="mobile-menu">
+            <a href="#experience">The Experience</a>
+            <a href="#estates">The Estates</a>
+            <a href="#contact">Request Access</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="gold-label">Puerto Plata, Dominican Republic</div>
+        <h1>THE VIP <br> PORTAL</h1>
+        <p>Unlock unrestricted access to the Amber Coast's most exclusive villas. Your Chairman's Circle credentials await.</p>
+        <a href="#estates" class="btn" style="text-decoration: none; display: inline-block;">Enter The Collection</a>
+    </section>
+
+    <section id="experience" class="perks-section">
+        <div class="section-title">
+            <h2>The Bracelet Experience</h2>
+            <div class="divider"></div>
+            <p>Your Chairman's Circle credentials unlock an entirely different Dominican Republic. Unrestricted, unbothered, and unforgettable.</p>
+        </div>
+        
+        <div class="perks-grid">
+            <div class="perk-card">
+                <h3>VIP Beach Access</h3>
+                <p>Bypass the crowds. Enjoy exclusive entry to private-access beach clubs featuring attentive, members-only cabana service and top-shelf bars.</p>
+            </div>
+            <div class="perk-card">
+                <h3>Private Villa Chef</h3>
+                <p>Wake up to a gourmet breakfast prepared in your private villa, alongside a fully stocked refrigerator curated by your dedicated concierge.</p>
+            </div>
+            <div class="perk-card">
+                <h3>Elite Transfers</h3>
+                <p>Seamless movement across the resort and beyond with VIP transportation options including helicopter arrivals, limousines, and private golf carts.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="estates" class="estates-section">
+        <div class="section-title">
+            <h2>The Collection</h2>
+            <div class="divider"></div>
+            <p>From modern oceanfront suites to sprawling private villas.</p>
+        </div>
+        
+        <div class="estates-grid">
+            <div class="estate-card">
+                <div class="estate-image" style="background-image: url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="estate-info">
+                    <h3>The Crown Villas</h3>
+                    <p>The ultimate personal oasis. Featuring private pools, sweeping terraces, and dedicated concierge service to handle dinner reservations and excursions.</p>
+                </div>
+            </div>
+            <div class="estate-card">
+                <div class="estate-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="estate-info">
+                    <h3>Presidential Suites</h3>
+                    <p>Unmatched luxury with expansive living areas, breathtaking views, and modern sophistication right in the heart of the resort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="inquiry-section">
+        <div class="section-title">
+            <h2>Request Access</h2>
+            <div class="divider"></div>
+            <p id="form-instruction">Submit your anticipated travel dates. Our private concierge will reach out to confirm availability and discuss your itinerary.</p>
+        </div>
+        
+        <div id="success-message" style="display: none; text-align: center; padding: 40px 0;">
+            <h3 style="color: var(--gold-champagne); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">Inquiry Received</h3>
+            <p>A member of our private concierge team will review your request and contact you at the email provided within 24 hours.</p>
+        </div>
+
+        <form class="vip-form" id="inquiryForm" action="https://formspree.io/f/xjgpgrwb" method="POST">
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Primary Guest Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="tel" name="phone" placeholder="Phone Number (10 Digits)" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+            </div>
+            
+            <div class="date-row" style="display: flex; gap: 20px;">
+                <div class="input-group" style="flex: 1;">
+                    <label style="font-size: 0.7rem; color: #555; letter-spacing: 2px; display: block; margin-bottom: 5px;">CHECK-IN</label>
+                    <input type="date" id="checkIn" name="checkin" required>
+                </div>
+                <div class="input-group" style="flex: 1;">
+                    <label style="font-size: 0.7rem; color: #555; letter-spacing: 2px; display: block; margin-bottom: 5px;">CHECK-OUT</label>
+                    <input type="date" id="checkOut" name="checkout" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="travelers" name="travelers" placeholder="Number of Travelers" min="1" required>
+            </div>
+            
+            <div class="input-group">
+                <select id="accommodation" name="accommodation" required>
+                    <option value="" disabled selected>Select Accommodation Request</option>
+                    <optgroup label="Villas">
+                        <option value="The Cliff Villas">The Cliff Villas</option>
+                        <option value="The Crown Villas">The Crown Villas</option>
+                        <option value="The Royal Villas">The Royal Villas</option>
+                        <option value="Villa Park">Villa Park</option>
+                    </optgroup>
+                    <optgroup label="Suites & Resorts">
+                        <option value="Presidential Suites">Presidential Suites</option>
+                        <option value="Sunrise Suites">Sunrise Suites</option>
+                        <option value="The Royal Suites">The Royal Suites</option>
+                        <option value="Crown & Residence Suites">Crown & Residence Suites</option>
+                        <option value="Cofresi Palm Beach & Spa Resort">Cofresi Palm Beach & Spa Resort</option>
+                        <option value="Tropical">Tropical</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="input-group" id="bedroomField" style="display: none;">
+                <select id="bedrooms" name="bedrooms">
+                    <option value="" disabled selected>Number of Bedrooms Required</option>
+                    <option value="4">4 Bedrooms (Max 8 Guests)</option>
+                    <option value="5">5 Bedrooms (Max 10 Guests)</option>
+                    <option value="6">6 Bedrooms (Max 12 Guests)</option>
+                    <option value="7">7 Bedrooms (Max 14 Guests)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <textarea name="comments" placeholder="Additional information or special requests..." rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="btn" id="submit-btn">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
