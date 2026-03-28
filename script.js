@@ -183,7 +183,15 @@ const legalContent = {
             <br>
             <p><a href="terms.html" style="color: var(--gold-champagne); text-decoration: underline; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">CLICK HERE TO READ THE EXHAUSTIVE, FULL TERMS OF SERVICE</a></p>`,
     
-    privacy: `<h2>Privacy Policy</h2><p>We collect names and contact info solely to facilitate travel itineraries. Data is processed through Formspree and Vercel. We never sell or trade your data to third-party marketing entities.</p>`
+    // UPDATED PRIVACY CONTENT
+    privacy: `<h2>Summary of Privacy Policy</h2>
+              <p>Last Updated: March 28, 2026. Your privacy and data security are critical priorities for Elite Gold Escapes.</p>
+              <h2>1. Data Collection</h2><p>We collect necessary personal information (names, contact details, travel dates) required strictly to facilitate your bespoke itinerary and secure VIP inventory.</p>
+              <h2>2. Information Sharing</h2><p>We do not sell, rent, or trade your data to marketing entities. Your information is securely shared only with essential operational partners, including Lifestyle Holidays Vacation Club (LHVC) and secure processing vendors.</p>
+              <h2>3. Security & Tracking</h2><p>We utilize industry-standard SSL encryption and essential cookies to ensure the secure transmission of your booking requests.</p>
+              <h2>4. Your Privacy Rights</h2><p>Depending on your jurisdiction (e.g., CCPA or Texas privacy laws), you may have rights to access, correct, or request the deletion of your collected personal data.</p>
+              <br>
+              <p><a href="privacy.html" style="color: var(--gold-champagne); text-decoration: underline; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">CLICK HERE TO READ THE EXHAUSTIVE, FULL PRIVACY POLICY</a></p>`
 };
 
 document.getElementById("open-terms").onclick = () => {
@@ -267,7 +275,7 @@ document.querySelectorAll('.gallery-trigger').forEach(trigger => {
             photoIndex = 0;
             activeImg.src = currentPhotos[photoIndex];
             updateCounter();
-            lightbox.style.display = "flex"; // Properly triggers the flex layout only when clicked
+            lightbox.style.display = "flex"; 
             startSlideshow(); 
         } else {
             alert("Gallery imagery is currently being curated for " + activeTitle + ". Check back soon!");
