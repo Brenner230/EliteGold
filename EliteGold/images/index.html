@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Gold Escapes | Private Access</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="images/logo.svg" alt="Elite Gold Escapes Logo" style="height: 40px;">
+        
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="mobile-menu">
+            <a href="#process">The Process</a>
+            <a href="#experience">The Experience</a>
+            <a href="#estates">The Collection</a>
+            <a href="#directory">The Directory</a>
+            <a href="#concierge">Your Concierge</a>
+            <a href="#contact">Request Access</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="gold-label">Puerto Plata, Dominican Republic</div>
+        <h1>THE VIP <br> PORTAL</h1>
+        <p>Unlock unrestricted access to the Amber Coast's most exclusive villas. Your ultimate VIP credentials await.</p>
+        <a href="#estates" class="btn" style="text-decoration: none; display: inline-block;">Enter The Collection</a>
+    </section>
+
+    <section id="process" class="process-section">
+        <div class="section-title">
+            <h2>The Acquisition</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <h3>Request Access</h3>
+                <p>Submit your anticipated travel dates and estate requirements through our secure portal.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <h3>Bespoke Itinerary</h3>
+                <p>We confirm your luxury villa, lock in your Gold VIP credentials, and curate your dining and VIP beach access.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <h3>Arrive In Luxury</h3>
+                <p>Bypass the ordinary. Enjoy elite transfers directly to your private estate where your personal chef awaits.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="perks-section">
+        <div class="section-title">
+            <h2>The Bracelet Experience</h2>
+            <div class="divider"></div>
+            <p>Your Gold VIP credentials unlock an entirely different Dominican Republic. Unrestricted, unbothered, and unforgettable.</p>
+        </div>
+        
+        <div class="perks-grid">
+            <div class="perk-card">
+                <h3>VIP Beach Access</h3>
+                <p>Bypass the crowds. Enjoy exclusive entry to private-access beach clubs featuring attentive beach butlers, swinging beds, and premium bars.</p>
+            </div>
+            <div class="perk-card">
+                <h3>Private Villa Chef & BBQ</h3>
+                <p>Wake up to a gourmet breakfast prepared daily in your private villa. During your stay, enjoy an exclusive backyard BBQ featuring premium steak and lobster.</p>
+            </div>
+            <div class="perk-card">
+                <h3>Elite Transfers</h3>
+                <p>Seamless movement across the resort and beyond with VIP transportation options including helicopter arrivals, limousines, and private golf carts.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="estates" class="estates-section">
+        <div class="section-title">
+            <h2>The Collection</h2>
+            <div class="divider"></div>
+            <p>Select a category to explore our portfolio of private estates and resort suites.</p>
+        </div>
+
+        <div class="collection-toggle">
+            <button class="toggle-btn active" id="btn-villas">Private Villas</button>
+            <button class="toggle-btn" id="btn-suites">Suites & Resorts</button>
+        </div>
+
+        <div id="villas-catalogue" class="catalogue-container active">
+            <div class="catalogue-list">
+                <button class="catalogue-item active" data-image="images/villas/cliff-villas/cliff-1.jpg" data-title="The Cliff Villas" data-beds="6 to 7 Bedrooms" data-desc="The pinnacle of luxury set on a dramatic peninsula. Features modern design, floating staircases, and infinity pools merging with the Caribbean Sea.">The Cliff Villas</button>
+                <button class="catalogue-item" data-image="images/villas/crown-villas/crown-1.jpg" data-title="The Crown Villas" data-beds="3 to 7 Bedrooms" data-desc="Classic Mediterranean-style estates nestled in lush tropical vegetation. Every comfort carefully crafted with sprawling private pools and shaded verandas.">The Crown Villas</button>
+                <button class="catalogue-item" data-image="images/villas/royal-villas/Royal-1.jpg" data-title="The Royal Villas" data-beds="3 to 7 Bedrooms" data-desc="A perfect fusion of Spanish Mediterranean architecture and contemporary chic. Rich designer furnishings, cascading pool elements, and ultimate privacy.">The Royal Villas</button>
+                <button class="catalogue-item" data-image="images/villas/villa-park/park-1.jpg" data-title="Villa Park" data-beds="4 to 6 Bedrooms" data-desc="Surrounded by majestic mountains and exotic flora. Features beautiful tiled floors, private Jacuzzis, and an exclusive, highly tailored estate experience.">Villa Park</button>
+            </div>
+            
+            <div class="catalogue-display">
+                <div class="display-image gallery-trigger" id="villas-image" style="background-image: url('images/villas/cliff-villas/cliff-1.jpg'); cursor: zoom-in;" title="Click to view gallery">
+                    <div class="gallery-hint">View Gallery</div>
+                </div>
+                <div class="display-info">
+                    <h3 id="villas-title">The Cliff Villas</h3>
+                    <p class="bed-count" id="villas-beds">6 to 7 Bedrooms</p>
+                    <p id="villas-desc">The pinnacle of luxury set on a dramatic peninsula. Features modern design, floating staircases, and infinity pools merging with the Caribbean Sea.</p>
+                    <ul class="amenity-list">
+                        <li>Private Swimming Pool</li>
+                        <li>Personal In-Villa Chef</li>
+                        <li>Dedicated Concierge</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="suites-catalogue" class="catalogue-container">
+            <div class="catalogue-list">
+                <button class="catalogue-item active" data-image="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" data-title="Presidential Suites" data-beds="Luxury Suites" data-desc="Incredible luxury accommodations setting a new standard for hotel-style getaways with expansive living areas and unmatched comfort.">Presidential Suites</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80" data-title="Sunrise Suites" data-beds="Luxury Suites" data-desc="Ideally located in a deluxe four-story building, offering breathtaking morning views and serene, modern elegance.">Sunrise Suites</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" data-title="The Royal Suites" data-beds="Luxury Suites" data-desc="A first-class, five-star vacation experience with lush surroundings and impeccably designed tropical interiors.">The Royal Suites</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" data-title="Crown & Residence Suites" data-beds="Luxury Suites" data-desc="Luxurious suites located at the base of a picturesque mountain slope, offering a secluded and serene hideaway.">Crown & Residence Suites</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80" data-title="Cofresi Palm Beach Resort" data-beds="Resort Experience" data-desc="Nestled along the Cofresi beach, blending luxury spa treatments with vibrant, energetic resort life.">Cofresi Palm Beach</button>
+                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=80" data-title="Tropical Resort" data-beds="Resort Experience" data-desc="Stretching along one and a half miles of golden sands, delivering the quintessential beachfront Caribbean experience.">Tropical Resort</button>
+            </div>
+            
+            <div class="catalogue-display">
+                <div class="display-image gallery-trigger" id="suites-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80'); cursor: zoom-in;" title="Click to view gallery">
+                    <div class="gallery-hint">View Gallery</div>
+                </div>
+                <div class="display-info">
+                    <h3 id="suites-title">Presidential Suites</h3>
+                    <p class="bed-count" id="suites-beds">Luxury Suites</p>
+                    <p id="suites-desc">Incredible luxury accommodations setting a new standard for hotel-style getaways with expansive living areas and unmatched comfort.</p>
+                    <ul class="amenity-list">
+                        <li>VIP Beach Access</li>
+                        <li>Premium Dining Options</li>
+                        <li>Resort Entertainment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="directory" class="directory-section">
+        <div class="section-title">
+            <h2>The Elite Directory</h2>
+            <div class="divider"></div>
+            <p>A curated selection of the global cuisines, private beaches, and VIP lounges available exclusively to our guests.</p>
+        </div>
+
+        <div class="directory-grid">
+            <div class="directory-category">
+                <h3 class="category-title">Global Cuisines</h3>
+                <ul class="directory-list">
+                    <li>
+                        <h4>Rodizio Wine Cellar</h4>
+                        <p>Authentic Brazilian Churrascaria • Cofresi Palm</p>
+                    </li>
+                    <li>
+                        <h4>Simply Gourmet</h4>
+                        <p>Premium Steak & Seafood • VIP World</p>
+                    </li>
+                    <li>
+                        <h4>Jazz</h4>
+                        <p>Upscale French Bistro • Presidential Suites</p>
+                    </li>
+                    <li>
+                        <h4>Tapas Lounge</h4>
+                        <p>Spanish Hors d'oeuvres • VIP A la carte</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="directory-category">
+                <h3 class="category-title">Exclusive Beach Clubs</h3>
+                <ul class="directory-list">
+                    <li>
+                        <h4>V.I.P. Beach</h4>
+                        <p>Sushi Bar & Mixology • Beach Butlers</p>
+                    </li>
+                    <li>
+                        <h4>Harmony Beach</h4>
+                        <p>Gourmet Crepes & Ice Cream • Swinging Beds</p>
+                    </li>
+                    <li>
+                        <h4>Deja View Beach</h4>
+                        <p>The Diamond Grill • Seaside Jacuzzis</p>
+                    </li>
+                    <li>
+                        <h4>Lifestyle Beach</h4>
+                        <p>Half Shell Seafood Bar • Ceviche & Fast Fare</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="directory-category">
+                <h3 class="category-title">Lounges & Bars</h3>
+                <ul class="directory-list">
+                    <li>
+                        <h4>Cosmopolitans</h4>
+                        <p>Premium Cocktails • VIP Pool</p>
+                    </li>
+                    <li>
+                        <h4>Bubbles</h4>
+                        <p>Sparkling Lounge • V.I.P. Beach</p>
+                    </li>
+                    <li>
+                        <h4>Mixology</h4>
+                        <p>Craft Cocktails • V.I.P. Beach</p>
+                    </li>
+                    <li>
+                        <h4>The Spot</h4>
+                        <p>Elevated Views • Balcony Level of VIP Pool</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews-section">
+        <div class="section-title">
+            <h2>The Guest Experience</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="review-slide active">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"An absolutely flawless experience. The private chef at our Crown Villa exceeded our expectations every single morning. Bypassing the crowds for the VIP Beach was worth every penny."</p>
+                <p class="reviewer">— James T., New York</p>
+            </div>
+            
+            <div class="review-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Elite Gold Escapes handled everything perfectly. The helicopter transfer from the airport made us feel like royalty before we even checked in. Highly recommend the 6-bedroom Cliff Villas."</p>
+                <p class="reviewer">— Sarah & Mark L., Texas</p>
+            </div>
+
+            <div class="review-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The level of service is unmatched. Having a dedicated concierge meant we never had to worry about dinner reservations or excursions. A truly five-star Caribbean escape."</p>
+                <p class="reviewer">— David W., London</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="concierge" class="concierge-section">
+        <div class="concierge-container">
+            <div class="concierge-image" style="background-image: url('images/Photo.jpg'); background-position: top center;"></div>
+            <div class="concierge-info">
+                <p class="gold-label" style="margin-bottom: 10px;">Founder & Principal Broker</p>
+                <h2>Robert Brenner Jones</h2>
+                <div class="divider" style="margin: 20px 0;"></div>
+                <p>With a professional foundation built on managing high-stakes relationships and complex logistics for global leaders like Verizon, I bring a refined, executive-level approach to luxury travel. Armed with a degree in Entrepreneurship and a career defined by consultative, white-glove service, I founded Elite Gold Escapes to curate flawless, high-performance escapes on the Dominican Republic's Amber Coast.</p>
+                <p>I leverage a deep professional network to secure exclusive VIP inventory that others simply cannot access. From the moment you request access until your private transfer departs, my team and I handle every meticulous detail. You focus on the experience; I handle the execution.</p>
+                <p class="signature-text" style="font-family: 'Georgia', serif; font-size: 1.8rem; font-style: italic; color: var(--gold-champagne); margin-top: 30px;">Robert</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="inquiry-section">
+        <div class="section-title">
+            <h2>Request Access</h2>
+            <div class="divider"></div>
+            <p id="form-instruction">Submit your anticipated travel dates. Our private concierge will reach out to confirm availability and discuss your itinerary.</p>
+        </div>
+        
+        <div id="success-message" style="display: none; text-align: center; padding: 40px 0;">
+            <h3 style="color: var(--gold-champagne); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">Inquiry Received</h3>
+            <p>A member of our private concierge team will review your request and contact you at the email provided within 24 hours.</p>
+        </div>
+
+        <form class="vip-form" id="inquiryForm" action="https://formspree.io/f/xjgpgrwb" method="POST">
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Primary Guest Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="tel" name="phone" placeholder="Phone Number (10 Digits)" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+            </div>
+            
+            <div class="date-row" style="display: flex; gap: 20px;">
+                <div class="input-group" style="flex: 1;">
+                    <label style="font-size: 0.7rem; color: #555; letter-spacing: 2px; display: block; margin-bottom: 5px;">CHECK-IN</label>
+                    <input type="date" id="checkIn" name="checkin" required>
+                </div>
+                <div class="input-group" style="flex: 1;">
+                    <label style="font-size: 0.7rem; color: #555; letter-spacing: 2px; display: block; margin-bottom: 5px;">CHECK-OUT</label>
+                    <input type="date" id="checkOut" name="checkout" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="travelers" name="travelers" placeholder="Number of Travelers" min="1" required>
+            </div>
+            
+            <div class="input-group">
+                <select id="accommodation" name="accommodation" required>
+                    <option value="" disabled selected>Select Accommodation Request</option>
+                    <optgroup label="Villas">
+                        <option value="The Cliff Villas">The Cliff Villas</option>
+                        <option value="The Crown Villas">The Crown Villas</option>
+                        <option value="The Royal Villas">The Royal Villas</option>
+                        <option value="Villa Park">Villa Park</option>
+                    </optgroup>
+                    <optgroup label="Suites & Resorts">
+                        <option value="Presidential Suites">Presidential Suites</option>
+                        <option value="Sunrise Suites">Sunrise Suites</option>
+                        <option value="The Royal Suites">The Royal Suites</option>
+                        <option value="Crown & Residence Suites">Crown & Residence Suites</option>
+                        <option value="Cofresi Palm Beach & Spa Resort">Cofresi Palm Beach & Spa Resort</option>
+                        <option value="Tropical">Tropical</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="input-group" id="bedroomField" style="display: none;">
+                <select id="bedrooms" name="bedrooms">
+                    <option value="" disabled selected>Number of Bedrooms Required</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <textarea name="comments" placeholder="Additional information or special requests..." rows="4"></textarea>
+            </div>
+
+            <div class="terms-container">
+                <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                <label for="termsAgree">
+                    I HAVE READ AND AGREE TO THE <a href="javascript:void(0)" id="open-terms">TERMS OF SERVICE</a> AND <a href="javascript:void(0)" id="open-privacy">PRIVACY POLICY</a>.
+                </label>
+            </div>
+            
+            <button type="submit" class="btn" id="submit-btn">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <div id="legalModal" class="modal">
+        <div class="modal-box">
+            <span class="close-modal">&times;</span>
+            <div id="modal-content" class="tiny-legal-text"></div>
+        </div>
+    </div>
+
+    <div id="galleryModal" class="lightbox">
+        <div class="lightbox-container">
+            <span class="close-lightbox">&times;</span>
+            
+            <div class="lightbox-stage">
+                <button id="prev-photo" class="lightbox-arrow left-arrow">❮</button>
+                <img class="lightbox-content" id="active-image" alt="Luxury Villa Interior">
+                <button id="next-photo" class="lightbox-arrow right-arrow">❯</button>
+            </div>
+            
+            <div class="lightbox-footer">
+                <p id="lightbox-counter" class="lightbox-counter">1 / 1</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/logo.svg" alt="Elite Gold Escapes Logo" class="footer-logo">
+            <p class="footer-email"><a href="mailto:info@elitegoldescapes.com" style="color: var(--text-platinum); text-decoration: none; letter-spacing: 2px;">INFO@ELITEGOLDESCAPES.COM</a></p>
+            <div class="footer-links">
+                <a href="terms.html">Terms of Service</a>
+                <span class="separator">|</span>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p class="copyright">&copy; 2026 Elite Gold Escapes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
