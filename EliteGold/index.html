@@ -97,14 +97,16 @@
 
         <div id="villas-catalogue" class="catalogue-container active">
             <div class="catalogue-list">
-                <button class="catalogue-item active" data-image="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80" data-title="The Cliff Villas" data-beds="6 to 7 Bedrooms" data-desc="The pinnacle of luxury set on a dramatic peninsula. Features modern design, floating staircases, and infinity pools merging with the Caribbean Sea.">The Cliff Villas</button>
-                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" data-title="The Crown Villas" data-beds="3 to 7 Bedrooms" data-desc="Classic Mediterranean-style estates nestled in lush tropical vegetation. Every comfort carefully crafted with sprawling private pools and shaded verandas.">The Crown Villas</button>
-                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" data-title="The Royal Villas" data-beds="3 to 7 Bedrooms" data-desc="A perfect fusion of Spanish Mediterranean architecture and contemporary chic. Rich designer furnishings, cascading pool elements, and ultimate privacy.">The Royal Villas</button>
-                <button class="catalogue-item" data-image="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80" data-title="Villa Park" data-beds="4 to 6 Bedrooms" data-desc="Surrounded by majestic mountains and exotic flora. Features beautiful tiled floors, private Jacuzzis, and an exclusive, highly tailored estate experience.">Villa Park</button>
+                <button class="catalogue-item active" data-image="images/villas/cliff-villas/cliff-1.jpg" data-title="The Cliff Villas" data-beds="6 to 7 Bedrooms" data-desc="The pinnacle of luxury set on a dramatic peninsula. Features modern design, floating staircases, and infinity pools merging with the Caribbean Sea.">The Cliff Villas</button>
+                <button class="catalogue-item" data-image="images/villas/crown-villas/crown-1.jpg" data-title="The Crown Villas" data-beds="3 to 7 Bedrooms" data-desc="Classic Mediterranean-style estates nestled in lush tropical vegetation. Every comfort carefully crafted with sprawling private pools and shaded verandas.">The Crown Villas</button>
+                <button class="catalogue-item" data-image="images/villas/royal-villas/Royal-1.jpg" data-title="The Royal Villas" data-beds="3 to 7 Bedrooms" data-desc="A perfect fusion of Spanish Mediterranean architecture and contemporary chic. Rich designer furnishings, cascading pool elements, and ultimate privacy.">The Royal Villas</button>
+                <button class="catalogue-item" data-image="images/villas/villa-park/park-1.jpg" data-title="Villa Park" data-beds="4 to 6 Bedrooms" data-desc="Surrounded by majestic mountains and exotic flora. Features beautiful tiled floors, private Jacuzzis, and an exclusive, highly tailored estate experience.">Villa Park</button>
             </div>
             
             <div class="catalogue-display">
-                <div class="display-image" id="villas-image" style="background-image: url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80');"></div>
+                <div class="display-image gallery-trigger" id="villas-image" style="background-image: url('images/villas/cliff-villas/cliff-1.jpg'); cursor: zoom-in;" title="Click to view gallery">
+                    <div class="gallery-hint">View Gallery</div>
+                </div>
                 <div class="display-info">
                     <h3 id="villas-title">The Cliff Villas</h3>
                     <p class="bed-count" id="villas-beds">6 to 7 Bedrooms</p>
@@ -129,7 +131,9 @@
             </div>
             
             <div class="catalogue-display">
-                <div class="display-image" id="suites-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80');"></div>
+                <div class="display-image gallery-trigger" id="suites-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80'); cursor: zoom-in;" title="Click to view gallery">
+                    <div class="gallery-hint">View Gallery</div>
+                </div>
                 <div class="display-info">
                     <h3 id="suites-title">Presidential Suites</h3>
                     <p class="bed-count" id="suites-beds">Luxury Suites</p>
@@ -329,24 +333,39 @@
                 <textarea name="comments" placeholder="Additional information or special requests..." rows="4"></textarea>
             </div>
 
-          <div class="terms-container">
-    <input type="checkbox" id="termsAgree" name="termsAgree" required>
-    <label for="termsAgree">
-        I HAVE READ AND AGREE TO THE <a href="javascript:void(0)" id="open-terms">TERMS OF SERVICE</a> AND <a href="javascript:void(0)" id="open-privacy">PRIVACY POLICY</a>.
-    </label>
-</div>
-
-<div id="legalModal" class="modal">
-    <div class="modal-box">
-        <span class="close-modal">&times;</span>
-        <div id="modal-content" class="tiny-legal-text">
+            <div class="terms-container">
+                <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                <label for="termsAgree">
+                    I HAVE READ AND AGREE TO THE <a href="javascript:void(0)" id="open-terms">TERMS OF SERVICE</a> AND <a href="javascript:void(0)" id="open-privacy">PRIVACY POLICY</a>.
+                </label>
             </div>
-    </div>
-</div>
             
             <button type="submit" class="btn" id="submit-btn">Submit Inquiry</button>
         </form>
     </section>
+
+    <div id="legalModal" class="modal">
+        <div class="modal-box">
+            <span class="close-modal">&times;</span>
+            <div id="modal-content" class="tiny-legal-text"></div>
+        </div>
+    </div>
+
+    <div id="galleryModal" class="lightbox">
+        <div class="lightbox-container">
+            <span class="close-lightbox">&times;</span>
+            
+            <div class="lightbox-stage">
+                <button id="prev-photo" class="lightbox-arrow left-arrow">❮</button>
+                <img class="lightbox-content" id="active-image" alt="Luxury Villa Interior">
+                <button id="next-photo" class="lightbox-arrow right-arrow">❯</button>
+            </div>
+            
+            <div class="lightbox-footer">
+                <p id="lightbox-counter" class="lightbox-counter">1 / 1</p>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-content">
