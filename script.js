@@ -173,11 +173,15 @@ const modalBody = document.getElementById("modal-content");
 const closeBtn = document.querySelector(".close-modal");
 
 const legalContent = {
-    terms: `<h2>Terms of Service</h2><p>Last Updated: March 27, 2026</p>
-            <h2>1. Brokerage Role</h2><p>Elite Gold Escapes operates exclusively as a private broker and facilitator for guest stays at Lifestyle Holidays Vacation Club. We do not own the physical resort assets.</p>
-            <h2>2. Inventory Flexibility</h2><p>The Agency guarantees confirmed bedroom counts, but reserves the right to fulfill these via a combination of units (e.g., a 7-bedroom request may be split into 3 and 4 bedroom villas) based on resort occupancy.</p>
-            <h2>3. Force Majeure</h2><p>No refunds are provided for weather-related travel incidents, natural disasters, or flight cancellations. Travel insurance is mandatory for financial protection.</p>
-            <h2>4. Liability</h2><p>Robert Brenner Jones and Elite Gold Escapes are not liable for direct or indirect damages, personal injury, or property loss occurring at the resort level.</p>`,
+    terms: `<h2>Summary of Terms of Service</h2>
+            <p>Last Updated: March 28, 2026. By submitting an inquiry, you explicitly agree to the following key terms:</p>
+            <h2>1. Brokerage Role & Accommodations</h2><p>Elite Gold Escapes acts solely as a private broker. We guarantee total bedroom counts, but reserve the right to fulfill large requests via a combination of units (e.g., a 7-bedroom request fulfilled as a 3-bedroom and 4-bedroom villa). Specific villa locations cannot be guaranteed.</p>
+            <h2>2. Financial & Anti-Chargeback</h2><p>All payments are 100% NON-REFUNDABLE. Unwarranted credit card chargebacks will incur a $500 penalty and legal recovery fees.</p>
+            <h2>3. Force Majeure & Weather</h2><p>No refunds are provided for weather-related incidents, hurricanes, pandemics, or flight cancellations. Travel insurance is strictly mandated.</p>
+            <h2>4. Dominican Republic Specifics</h2><p>The Agency assumes zero liability for municipal power outages, non-potable tap water, local insects, Sargassum seaweed, or third-party excursions. Local hospitals require upfront cash for medical emergencies.</p>
+            <h2>5. Arbitration</h2><p>All disputes are subject to mandatory, binding arbitration in Austin, Texas. Class action lawsuits are strictly waived.</p>
+            <br>
+            <p><a href="terms.html" style="color: var(--gold-champagne); text-decoration: underline; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">CLICK HERE TO READ THE EXHAUSTIVE, FULL TERMS OF SERVICE</a></p>`,
     
     privacy: `<h2>Privacy Policy</h2><p>We collect names and contact info solely to facilitate travel itineraries. Data is processed through Formspree and Vercel. We never sell or trade your data to third-party marketing entities.</p>`
 };
@@ -211,7 +215,7 @@ function generateImageArray(basePath, prefix, count) {
 }
 
 const propertyGalleries = {
-    "The Cliff Villas": generateImageArray("images/villas/cliff-villas", "cliff-", 27), // Set to exactly 27 photos
+    "The Cliff Villas": generateImageArray("images/villas/cliff-villas", "cliff-", 27),
     "The Crown Villas": generateImageArray("images/villas/crown-villas", "crown-", 25),
     "The Royal Villas": generateImageArray("images/villas/royal-villas", "Royal-", 17),
     "Villa Park": generateImageArray("images/villas/villa-park", "park-", 21),
